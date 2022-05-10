@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>BPM Experiment</title>
+    <meta name="author" content="Stijn" />
+    <script type="text/javascript">
+        function blinking() {
+            if (on) {
+                document.getElementById('blink').style.backgroundColor = "white";
+                on = false;
+            } else {
+                document.getElementById('blink').style.backgroundColor = "black";
+                on = true;
+            }
+        }
+        function bpm(beats) {
+            return (60000/beats)/2
+        }
+
+        function main() {
+            on = false;
+            window.setInterval(function(){ blinking(); }, bpm(152));
+        }
+    </script>
+</head>
+<body id="" onload="main()">
+    <canvas id="blink" width="10" height="10" style="border: 1px black solid"></canvas>
+</body>
